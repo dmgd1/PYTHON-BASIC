@@ -4,10 +4,12 @@ subtract difference between original previous value and it's power. For first va
 Restriction:
 Examples:
     >>> calculate_power_with_difference([1, 2, 3])
-    [1, 4, 7]  # because [1^2, 2^2 - (1^2 - 1), 3^2 - (2^2 - 2)]
+    [1, 4, 7]
 """
 from typing import List
 
 
 def calculate_power_with_difference(ints: List[int]) -> List[int]:
-    ...
+    result = [val**2-(ints[i-1]**2-ints[i-1]) for i, val in enumerate(ints) if i > 0]
+
+    return [ints[0]] + result

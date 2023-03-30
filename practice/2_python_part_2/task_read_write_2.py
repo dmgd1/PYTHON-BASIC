@@ -21,4 +21,12 @@ def generate_words(n=20):
         word = ''.join(random.choices(string.ascii_lowercase, k=random.randint(3, 10)))
         words.append(word)
 
+    with open('UTF-8_file.txt', 'w', encoding='UTF-8') as f:
+        f.write('\n'.join(words))
+
+    with open('CP1252_file.txt', 'w', encoding='CP1252') as f:
+        f.write(', '.join(words[::-1]))
     return words
+
+
+generate_words()

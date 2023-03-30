@@ -17,5 +17,8 @@ In all cases it should print "Division finished"
 import typing
 
 
+
+
 def division(x: int, y: int) -> typing.Union[None, int]:
     ...
+
